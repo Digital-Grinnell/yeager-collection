@@ -1,5 +1,161 @@
-# cb-oralhistory
+# Yeager-Renfrow Oral Histories
 
+This repo was constructed from a [cb-oralhistory](https://github.com/Digital-Grinnell/cb-oralhistory) fork of the original https://github.com/CollectionBuilder/cb-oralhistory project COMBINED with elements of [CollectionBuilder base repo](https://github.com/Digital-Grinnell/grinnell-college-base-CB) (with Grinnell College specifics) that was itself derived from a CB experiment housed in https://github.com/Digital-Grinnell/black-library-CB-CSV-experiment.  
+
+The documentation below the [cb-oralhistory](#cb-oralhistory) and [CollectionBuilder-CSV](#collectionbuilder-csv) headings are specifc to the original repos and preserved here for reference only.  
+
+## Yeager-Renfrow Oral Histories Resources
+
+| Link | Description |  
+| ---  | ---         |  
+| https://docs.google.com/spreadsheets/d/1z2W5L8JVdNcqaPdNZyXAThw2wnf7TSUK2Y2giO9i6NM/edit?gid=663101020#gid=663101020 | The project's public metadata spreadsheet. |
+| | `main` branch deployed to Azure Static Web Apps |  
+| https://docs.google.com/spreadsheets/d/1z2W5L8JVdNcqaPdNZyXAThw2wnf7TSUK2Y2giO9i6NM/edit?gid=823757564#gid=823757564 | "From the Documentation" portion of our Google Sheet | 
+| | OneDrive folder |
+
+## Building as an Azure Static Web App
+
+Following the guidance provided in [Deploy your web app](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-jekyll#deploy-your-web-app)...  
+
+I choose the `jekyll` build option rather than `Custom` and got this workflow file...  
+
+```yml
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "/" # App source code path
+          api_location: "" # Api source code path - optional
+          output_location: "_site" # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          action: "close"
+```
+
+Following the aforementioned procedure eventually produced the site https://lemon-desert-0d74b4810.5.azurestaticapps.net.  
+
+This workflow uses GitHub Actions to deploy and you can see the status of deployment at https://github.com/Digital-Grinnell/yeager-renfrow-oral-histories/actions.  
+
+
+## Set Up a Custom Domain in Azure Static Web Apps
+
+Followed the procedure documented in https://learn.microsoft.com/en-us/azure/static-web-apps/custom-domain-external AFTER Mike C. setup the necessary CNAME record in the `grinnell.edu` domain in order to link this site to https://yeager-collection.grinnell.edu.  
+
+# Filters
+
+The presence of a `_data/filters.csv` file causes CB to display the "Topics:" and "Filter by Topic" elements you see below.  
+
+![](documents/images/2024-09-24-09-21-55.png)
+
+Removing that configuration file produces a display without those elements as you see below.
+
+![](documents/images/2024-09-24-09-24-46.png)
+
+# Timeline and Time-Span
+
+The CB documentation talks about [Editing the Home Page](https://collectionbuilder.github.io/cb-docs/docs/pages/home/#editing-the-home-page) including a sub-topic to [Delete a Home Page Feature](https://collectionbuilder.github.io/cb-docs/docs/pages/home/#delete-a-home-page-feature).  
+
+Since our data has no meaningful timeline elements (dates) we've elected to remove it by commenting out the `{% include index/time.html %}` statement in the `_layouts/home-infographic.html` file.
+
+# Suppressing Pages
+
+The original `config-nav.csv` file looked something like this:
+
+```
+display_name,stub,dropdown_parent
+Home,/,
+Browse,/browse.html,
+Visualization,/ohdviz.html
+Subjects,/subjects.html,
+Locations,/locations.html,
+Map,/map.html,
+Timeline,/timeline.html,
+Data,/data.html,
+About,/about.html,
+```
+
+For this project we wanted to suppress the `Visualization`, `Map` and `Timeline` pages so the file was modified to include only this configuration:
+
+```
+display_name,stub,dropdown_parent
+Home,/,
+Browse,/browse.html,
+Subjects,/subjects.html,
+Locations,/locations.html,
+Data,/data.html,
+About,/about.html,
+```
+
+# People
+
+Our initial "People" cloud tag was dominated by the interviewer, "Stuart Yeager", and I didn't want to remove his name from every interview transcript.  Fortunately Libby directed me to look deeper and I found https://collectionbuilder.github.io/cb-docs/docs/advanced/cloudpage/#create-a-new-cloud-page-using-cloud-layout-and-front-matter in the documentation and introduced the name of our interviewer as a cloud-stopwords frontmatter element in `pages/people.md` and it works nicely!
+
+The new line in the frontmatter is:
+
+```
+cloud-stopwords: yeager, stuart;
+```
+
+# Subjects
+
+Like our "People" page, our initial "Subjects" cloud tag was dominated by a single common phrase but we didn't want to remove it from line of the metadata CSV.  So, as with "People" I used https://collectionbuilder.github.io/cb-docs/docs/advanced/cloudpage/#create-a-new-cloud-page-using-cloud-layout-and-front-matter in the documentation and introduced `cloud-stopwords` frontmatter in `pages/subjects.md` and it works nicely!  To make this work I also had to change the `cloud-fields:` element of the frontmatter.  
+
+The new frontmatter is:
+
+```
+---
+title: Subjects
+layout: cloud
+permalink: /subjects.html
+# Default subject page is configured in "_data/theme.yml"
+cloud-fields: subject
+cloud-stopwords: black experience at grinnell college;
+# Leave cloud-fields as "site.data.theme.subjects-fields", but stopwords did NOT work until cloud-fields was changed?
+#   cloud-fields: site.data.theme.subjects-fields
+---
+```
+
+# footer_description
+
+We wanted to distinguish and differentiate our `site.description` data from the material that appears in the page footer so a new `site.footer_description` field was added to the `_config.yml` data AND a reference to `site.description` was changed to `site.footer_description` in the `_includes/footer.html` template.  
+
+# cb-oralhistory
 
 **cb-oralhistory** is a mix of [CollectionBuilder-CSV](https://github.com/CollectionBuilder/collectionbuilder-csv) and [Oral History as Data (OHD)](https://github.com/oralhistoryasdata/oralhistoryasdata.github.io). It's meant to serve as a starter repository for those wanting to build oral history collections with CollectionBuilder. 
 
@@ -35,17 +191,7 @@ However, here is a super quick overview of the process:
 - Edit your project's "_config.yml" with your collection information (see [site configuration docs](https://collectionbuilder.github.io/cb-docs/docs/config/)). Additional customization is done via a theme file, configuration files, CSS tweaks, and more--however, once your "_config.yml" is edited your site is ready to be previewed. 
 - Generate your site using Jekyll! (see docs for how to [use Jekyll locally](https://collectionbuilder.github.io/cb-docs/docs/repository/generate/) and [deploy on the web](https://collectionbuilder.github.io/cb-docs/docs/deploy/))
 
-Please feel free to ask questions in the main [CollectionBuilder discussion forum](https://github.com/CollectionBuilder/collectionbuilder.github.io/discussions).      
-
-## Important TIMESTAMP Note!
-
-If you put `timestamp` in your transcript .CSV files (we highly recommended that you do) please make sure they use full `[hh:mm:ss]` notation!  You may omit the `hh:` portion for timestamps of less than an hour, but make sure you always specify a full `mm:ss` notation.  For example, 9-minutes 7-seconds should never be specified as `[9:7]` or even `[9:07]`, the proper form is `[00:09:07]` but `[09:07]` will also work.  
-
-## Important DATE Note!
-
-Handling dates in metadata can be tricky and remember that information you enter in your metadata .CSV file comes into the framework as `text`, not as any other data type (so there are no `date` type variables).  This makes custom formatting of things like dates especially tricky.  Consequently, you won't find a lot of `date` formatting in CB, for the most part it will display exactly what you entered.  
-
-This can also present difficulties if you want to sort on something like a `date` field.  So it's recommended that you **always enter dates in the form `yyyy` (only the year), or `yyyy-mm` (year and month), or `yyyy-mm-dd` (a complete discrete date)**.  Doing so will ensure that your dates make sense when displayed AND they will sort properly too.  
+Please feel free to ask questions in the main [CollectionBuilder discussion forum](https://github.com/CollectionBuilder/collectionbuilder.github.io/discussions).       
 
 ----------
 
@@ -68,3 +214,86 @@ CollectionBuilder documentation and general web content is licensed [Creative Co
 This license does *NOT* include any objects or images used in digital collections, which may have individually applied licenses described by a "rights" field.
 CollectionBuilder code is licensed [MIT](https://github.com/CollectionBuilder/collectionbuilder-csv/blob/master/LICENSE). 
 This license does not include external dependencies included in the `assets/lib` directory, which are covered by their individual licenses.
+
+
+# Black Library Project Resources
+|https://grinco-my.sharepoint.com/:f:/r/personal/caveelizabeth_grinnell_edu/Documents/Black%20Library%20items?csf=1&web=1&e=7e6prh| OneDrive folder |
+
+| Link | Description |  
+| ---  | ---         |  
+| https://docs.google.com/spreadsheets/d/17uNXLP5aTSCfYZ8FXBqTvDd-z0F19FJeAOK5TsCr-PI/edit | The project's public metadata spreadsheet, built from https://docs.google.com/spreadsheets/d/1nN_k4JQB4LJraIzns7WcM3OXK-xxGMQhW1shMssflNM/edit#gid=1973435486 and our SHEETS predecessor. |
+| https://zealous-rock-08144ee10.4.azurestaticapps.net | `main` branch deployed to Azure Static Web Apps |  
+| https://docs.google.com/spreadsheets/d/17uNXLP5aTSCfYZ8FXBqTvDd-z0F19FJeAOK5TsCr-PI/edit#gid=823757564 | "From the Documentation" portion of our Google Sheet | 
+| https://grinco-my.sharepoint.com/:f:/r/personal/caveelizabeth_grinnell_edu/Documents/Black%20Library%20items?csf=1&web=1&e=7e6prh | OneDrive folder |
+
+----------
+
+## Running Locally
+
+```zsh
+bundle exec jekyll serve
+```
+
+## `objectid` Convention
+
+`grinnell_<index>` denotes a legacy object imported from _Digital.Grinnell_.  
+`dg_<epoch>` denotes a new object NOT imported from _Digital.Grinnell_.  `<epoch>` is a simple 10-digit UNIX epoch time generated when the object is cataloged. 
+
+## Building as an Azure Static Web App
+
+Following the guidance provided in [Deploy your web app](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-jekyll#deploy-your-web-app)...  
+
+I choose the `jekyll` build option rather than `Custom` and got this workflow file...  
+
+```yml
+name: Azure Static Web Apps CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          action: "upload"
+          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
+          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          app_location: "./" # App source code path
+          api_location: "" # Api source code path - optional
+          output_location: "_site" # Built app content directory - optional
+          ###### End of Repository/Build Configurations ######
+
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    name: Close Pull Request Job
+    steps:
+      - name: Close Pull Request
+        id: closepullrequest
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          action: "close"
+```
+
+Following the aforementioned procedure eventually produced the site https://zealous-rock-08144ee10.4.azurestaticapps.net.  
+
+This workflow uses GitHub Actions to deploy and you can see the status of deployment at https://github.com/Digital-Grinnell/black-library-CB-CSV-experiment/actions?query=workflow%3A%22Azure%20Static%20Web%20Apps%20CI%2FCD%22%20branch%3Amain.  
