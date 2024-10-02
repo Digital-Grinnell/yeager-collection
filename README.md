@@ -1,10 +1,10 @@
 # Yeager-Renfrow Oral Histories
 
-This repo was constructed from a [cb-oralhistory](https://github.com/Digital-Grinnell/cb-oralhistory) fork of the original https://github.com/CollectionBuilder/cb-oralhistory project COMBINED with elements of [CollectionBuilder base repo](https://github.com/Digital-Grinnell/grinnell-college-base-CB) (with Grinnell College specifics) that was itself derived from a CB experiment housed in https://github.com/Digital-Grinnell/black-library-CB-CSV-experiment.  
+This repo was constructed from a [cb-oralhistory](https://github.com/GrinnellCollegeLibraries/cb-oralhistory) fork of the original https://github.com/CollectionBuilder/cb-oralhistory project COMBINED with elements of [CollectionBuilder base repo](https://github.com/Digital-Grinnell/grinnell-college-base-CB) (with Grinnell College specifics) that was itself derived from a CB experiment housed in https://github.com/Digital-Grinnell/black-library-CB-CSV-experiment.  
 
-The documentation below the [cb-oralhistory](#cb-oralhistory) and [CollectionBuilder-CSV](#collectionbuilder-csv) headings are specifc to the original repos and preserved here for reference only.  
+The documentation below the [cb-oralhistory](#cb-oralhistory) and [CollectionBuilder-CSV](#collectionbuilder-csv) headings are specific to the original repos and preserved here for reference only.  
 
-## Yeager-Renfrow Oral Histories Resources
+## Yeager Collection
 
 | Link | Description |  
 | ---  | ---         |  
@@ -17,7 +17,7 @@ The documentation below the [cb-oralhistory](#cb-oralhistory) and [CollectionBui
 
 Following the guidance provided in [Deploy your web app](https://learn.microsoft.com/en-us/azure/static-web-apps/publish-jekyll#deploy-your-web-app)...  
 
-I choose the `jekyll` build option rather than `Custom` and got this workflow file...  
+I choose the `jekyll` build option rather than `Custom` and got this workflow file AND the `env:` section was added to complete the Azure config...  
 
 ```yml
 name: Azure Static Web Apps CI/CD
@@ -45,7 +45,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_GRASS_080915210 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
@@ -54,6 +54,9 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "_site" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: # Add environment variables here
+          JEKYLL_ENV: production
+          TZ: America/Chicago
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -64,13 +67,13 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_<GENERATED_HOSTNAME> }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_GRASS_080915210 }}
           action: "close"
 ```
 
-Following the aforementioned procedure eventually produced the site https://lemon-desert-0d74b4810.5.azurestaticapps.net.  
+Following the aforementioned procedure eventually produced the site https://yellow-grass-080915210.5.azurestaticapps.net/.  
 
-This workflow uses GitHub Actions to deploy and you can see the status of deployment at https://github.com/Digital-Grinnell/yeager-renfrow-oral-histories/actions.  
+This workflow uses GitHub Actions to deploy and you can see the status of deployment at https://github.com/Digital-Grinnell/yeager-collection/actions.  
 
 
 ## Set Up a Custom Domain in Azure Static Web Apps
@@ -110,7 +113,7 @@ Data,/data.html,
 About,/about.html,
 ```
 
-For this project we wanted to suppress the `Visualization`, `Map` and `Timeline` pages so the file was modified to include only this configuration:
+For this project we wanted to suppress the `Visualization` and `Map` pages so the file was modified to include only this configuration:
 
 ```
 display_name,stub,dropdown_parent
@@ -118,6 +121,7 @@ Home,/,
 Browse,/browse.html,
 Subjects,/subjects.html,
 Locations,/locations.html,
+Timeline,/timeline.html,
 Data,/data.html,
 About,/about.html,
 ```
