@@ -1,3 +1,4 @@
+<!-- cb: _includes/index/objects.html -->
 {%- assign templates = site.data[site.metadata] | where_exp: 'item','item.parentid == nil ' | map: "display_template" -%}
 {%- assign types = "image;audio;video;pdf;panorama;record;compound_object;multiple;transcript" | split: ";" -%}
 <div class="card mb-3" >
@@ -36,3 +37,4 @@
     </p>
   </div>
 </div>
+<!-- /cb: _includes/index/objects.html -->

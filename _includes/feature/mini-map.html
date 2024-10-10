@@ -1,3 +1,4 @@
+<!-- cb: _includes/feature/mini-map.html -->
 {% comment %}
 
     Mini Leaflet Map item feature.
@@ -17,6 +18,8 @@
 {% endcomment %}
 {% capture map_id %}mini-map_{{ include.latitude | slugify }}{% endcapture %}
 {% assign map-item = site.data[site.metadata] | where: "objectid", include.objectid | first %}
+<!-- /cb: _includes/feature/mini-map.html -->
+
 <style>
 #{{ map_id }} { height: {{ include.height | default: '400px' }}; z-index: 98; }
 </style>

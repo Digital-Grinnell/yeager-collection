@@ -1,3 +1,4 @@
+<!-- cb: _includes/feature/pdf.html -->
 {% comment %}
     
     Item PDF embed from objectid or external link.
@@ -22,7 +23,6 @@
 
 {%- endcomment -%}
 
-<!-- cb: _includes/feature/pdf.html -->
 {% if include.objectid contains "/" %}
 {%- capture src -%}{{ include.objectid | relative_url }}{%- endcapture -%}
 {%- capture pdf_link -%}{{ src }}{%- endcapture -%}

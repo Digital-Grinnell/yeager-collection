@@ -1,3 +1,4 @@
+<!-- cb: _includes/feature/icon.html -->
 {%- comment -%}
 
     Bootstrap Icons, https://icons.getbootstrap.com/
@@ -13,3 +14,4 @@
 
 {%- endcomment -%}
 <svg class="bi icon-sprite {% if include.class %}{{ include.class }}{% endif %}" {% if include.label %}role="img" aria-label="{{ include.label | escape }}"{% else %}aria-hidden="true"{% endif %}><use xlink:href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#{{ include.icon }}" href="{{ '/assets/lib/icons/bootstrap-icons.svg' | relative_url }}#{{ include.icon }}"></use></svg>
+<!-- /cb: _includes/feature/icon.html -->

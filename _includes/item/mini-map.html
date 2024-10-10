@@ -1,3 +1,4 @@
+<!-- cb: _includes/item/mini-map.html -->
 {% comment %}
 
     Adds a Leaflet map featuring a single marker based on the item's lat long.
@@ -16,6 +17,8 @@
 <div id="mini-map"></div>
 {% if include.map-link == true %}
 <a href="{{ '/map.html?location=' | append: page.latitude  | append: ',' | append: page.longitude | append: '&marker=' | append: page.objectid | relative_url }}" class="btn btn-outline-primary my-3">View on Full Map</a>{% endif %}
+<!-- /cb: _includes/item/mini-map.html -->
+
 <!-- load leaflet dependencies -->
 <link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/assets/lib/leaflet/leaflet.fullscreen.css' | relative_url }}">

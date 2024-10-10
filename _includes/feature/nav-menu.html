@@ -1,3 +1,4 @@
+<!-- cb: _includes/feature/nav-menu.html -->
 {% comment %}
 
     About Page Nav Menu include,
@@ -15,3 +16,4 @@
 <p class="h6 shadow-sm p-3 about-nav sticky-top bg-white">
     Contents: {% for section in sections %}<a class="mx-2" href="#{{ section | slugify }}">{{ section }}</a> {% unless forloop.last %}| {% endunless %}{% endfor %}{% if page.credits == true %}| <a class="mx-2" href="#technical">Tech</a>{% endif %}
 </p>
+<!-- /cb: _includes/feature/nav-menu.html -->

@@ -1,3 +1,4 @@
+<!-- cb: _includes/feature/button.html -->
 {% comment %}
 
     Bootstrap button link, https://getbootstrap.com/docs/5.1/components/buttons/
@@ -17,3 +18,4 @@
 {% if include.centered %}<div class="text-center mb-3">{%- endif -%}
 <a class="btn{% if include.size %} btn-{{ include.size }}{% endif %} btn-{{ include.color | default: 'secondary' }}{% if include.float %} float-{{ include.float }}{% endif %}{% if include.width %} w-{{ include.width }}{% endif %}" href="{{ include.link }}">{{ include.text }}</a>
 {% if include.centered %}</div>{%- endif -%}
+<!-- /cb: _includes/feature/button.html -->

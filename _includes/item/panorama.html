@@ -1,3 +1,4 @@
+<!-- cb: _includes/item/panorama.html -->
 {% comment %}
 
     Adds a panorama image viewer using Pannellum.
@@ -7,6 +8,8 @@
 {%- endcomment -%}
 <link rel="stylesheet" href="{{ '/assets/lib/pannellum/pannellum.css' | relative_url }}">
 <div id="panorama" class="ratio ratio-4x3 my-4"></div>
+<!-- /cb: _includes/item/panorama.html -->
+
 <script src="{{ '/assets/lib/pannellum/pannellum.js' | relative_url }}"></script>
 <script>
 pannellum.viewer('panorama', {
