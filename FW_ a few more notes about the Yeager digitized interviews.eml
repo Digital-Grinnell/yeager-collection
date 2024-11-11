@@ -1,0 +1,193 @@
+Received: from CY8PR05MB9404.namprd05.prod.outlook.com (2603:10b6:930:93::16)
+ by SA1PR05MB9864.namprd05.prod.outlook.com with HTTPS; Wed, 23 Oct 2024
+ 19:54:03 +0000
+Received: from CH2PR05MB7157.namprd05.prod.outlook.com (2603:10b6:610:4a::29)
+ by CY8PR05MB9404.namprd05.prod.outlook.com (2603:10b6:930:93::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8093.16; Wed, 23 Oct
+ 2024 19:54:01 +0000
+Received: from CH2PR05MB7157.namprd05.prod.outlook.com
+ ([fe80::d62:93cc:dada:911]) by CH2PR05MB7157.namprd05.prod.outlook.com
+ ([fe80::d62:93cc:dada:911%4]) with mapi id 15.20.8069.016; Wed, 23 Oct 2024
+ 19:54:01 +0000
+From: "Jones, Christopher" <JONESCHR@grinnell.edu>
+To: "McFate, Mark" <mcfatem@grinnell.edu>
+Subject: FW: a few more notes about the Yeager digitized interviews
+Thread-Topic: a few more notes about the Yeager digitized interviews
+Thread-Index: AQHbH8uc/95dEb52EE2RkpH7V2Hs/bKUyv+g
+Date: Wed, 23 Oct 2024 19:54:01 +0000
+Message-ID:
+	<CH2PR05MB71573BCC48E39D5C23C4BDE7BD4D2@CH2PR05MB7157.namprd05.prod.outlook.com>
+References: <768CA879-7D14-4CD9-A07B-045606567D4F@grinnell.edu>
+In-Reply-To: <768CA879-7D14-4CD9-A07B-045606567D4F@grinnell.edu>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Internal
+X-MS-Exchange-Organization-AuthMechanism: 04
+X-MS-Exchange-Organization-AuthSource: CH2PR05MB7157.namprd05.prod.outlook.com
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-Network-Message-Id:
+	e74ec703-7f06-4b3f-5eb7-08dcf39c7129
+X-MS-Exchange-Organization-SCL: 1
+X-Message-Flag: Flag for follow up
+X-MS-TNEF-Correlator:
+X-MS-Exchange-Organization-RecordReviewCfmType: 0
+x-ms-publictraffictype: Email
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=grinnell.edu;
+x-ms-office365-filtering-correlation-id: e74ec703-7f06-4b3f-5eb7-08dcf39c7129
+x-ms-traffictypediagnostic:
+	CH2PR05MB7157:EE_|CY8PR05MB9404:EE_|SA1PR05MB9864:EE_
+x-microsoft-antispam: BCL:0;ARA:13230040|366016|8096899003|41050700001;
+x-forefront-antispam-report:
+	CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CH2PR05MB7157.namprd05.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230040)(366016)(8096899003)(41050700001);DIR:INT;
+x-ms-exchange-crosstenant-network-message-id:
+	e74ec703-7f06-4b3f-5eb7-08dcf39c7129
+x-ms-exchange-crosstenant-originalarrivaltime: 23 Oct 2024 19:54:01.8385 (UTC)
+x-ms-exchange-crosstenant-fromentityheader: Hosted
+x-ms-exchange-crosstenant-id: 524f9e3e-faca-4f64-b3ec-adb2baee8807
+x-ms-exchange-crosstenant-mailboxtype: HOSTED
+x-ms-exchange-crosstenant-userprincipalname:
+	RdAE3yJbsWanT/7NZcEs0H6LB5j1WzN6nRayL1mQW7+sAOHqCdVeDsZAwURvTx9frS7MKAoAaSnHtY+9OqQRtg==
+x-ms-exchange-transport-crosstenantheadersstamped: CY8PR05MB9404
+x-ms-exchange-transport-endtoendlatency: 00:00:01.5413393
+x-ms-exchange-crosstenant-authas: Internal
+x-ms-exchange-crosstenant-authsource: CH2PR05MB7157.namprd05.prod.outlook.com
+x-ms-exchange-processed-by-bccfoldering: 15.20.8093.017
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(425001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	R6szgXADFLKNrS8ZH06qKITEPQCBMdOk8AfsAdEi9mBmaCFrRlOoEmZS67JQDVCqpfwEu6KWVEHTVNnxKrnMprLwJ6DLGs3JVXBusIWh2blBK6Z5B5Y7FfeqVYXro4ghfw3ej4uZdkqlisTUfjTaGmapSGvxi7iFmtRPPsjRz+9vs999ga7PybBobQah1lyxLlkixsEDNJapYwoy1D/0rasWL23YLx4jT49Qtb5AkuEkCYY80a+2M45NutFHfyNiNyvsk6e+4ABsfbF8tIa1Whuvkz109AXn4v0X1NCvYFcSjy1jrvwxAm4iiT6BcxkiLMdDtFz6R06wNlCcvTqhVZZnav4uCVuY852gW9OfRQb4/P4Wv4/L3/Hf21f3Iamv2uCM8/rk/ENb+p7v0Y7t4jFZLHpC59bk0XH+7YgwGS4Qj54dSlICgD0ifqZ356rE8UR6YUc/WKKVrvIBpdktuTwrizVKFlFg66Ne3HpDzzpnB/hfnJPL+AatNZEwApZRfoQ8WQGawMrYr0oZN+yoT/0i14BcK0l+kQhvTuS2f5eaUTSckesQtVAnevqafaaIiw06xlVn+Ht2X8rMwhymq756zwfv2NnOCSyb3fdwr0G+EySSNjQgHCdkIbzXpZ/VDFDUqnLZVrelyIDqddfgAd1luQ219qBCA0kIy9px/O7sFb4fGjJSB949QYpjfQE6c/jlqZXNZ0zkgpc3KP6NjHYU12kacTlMRWGGL1hnc0QQF7tMu/OTpCFaVOGIM/3PaS/4Csas3y6ZOeEz0SYnTMHf+oGv9FqdoJkS5IdOoMxlmTAt0q7/v8Rfst0xKXAvPg9/Hf3epl0dO5ARbe5KLQ==
+Content-Type: multipart/alternative;
+	boundary="_000_CH2PR05MB71573BCC48E39D5C23C4BDE7BD4D2CH2PR05MB7157namp_"
+MIME-Version: 1.0
+
+--_000_CH2PR05MB71573BCC48E39D5C23C4BDE7BD4D2CH2PR05MB7157namp_
+Content-Type: text/plain; charset="us-ascii"
+
+
+
+From: Kaiser, Daniel <KAISER@Grinnell.EDU>
+Sent: Wednesday, October 16, 2024 8:02 AM
+To: Jones, Christopher <JONESCHR@grinnell.edu>
+Subject: a few more notes about the Yeager digitized interviews
+
+Hi, Chris. Now that I've gone thru all 19 interviews currently posted online, I noticed a few more items that need correction.
+
+1. What's identified in the online table of interviews as the recording of Elayne Chapman Kaiser (https://yeager-collection.grinnell.edu/items/dg_1724956092.html) pairs the transcript of Chapman Kaiser with the recorded interview of Elizabeth Beyene (whose own recording has the correct transcript matched with the interview). Not sure what happened to Chapman Kaiser's recording; I don't think I ran into it among the other recordings.
+
+2. A somewhat different issue arises in the interview with Jon Gray (https://yeager-collection.grinnell.edu/items/dg_1724957021.html); it's the right transcript but the first 4+ minutes are missing from the transcript and within those four minutes is a lot of information about Gray's family, their education, etc. The recording is quite faint, especially in the beginning (I had to bump up my sound a couple of times) so perhaps the automatic transcription could not pick it all up,  but the missing text should be restored to the transcript.
+
+3. A minor and, I hope, easily corrected error concerns what the table of interviews describes as an interview with "Henrietta Stevens" (https://yeager-collection.grinnell.edu/items/dg_1724966223.html). As Ms. Stevens points out in the interview, her given name is actually "Harrietta," not Henrietta.
+
+Best,
+dan
+
+
+
+--_000_CH2PR05MB71573BCC48E39D5C23C4BDE7BD4D2CH2PR05MB7157namp_
+Content-Type: text/html; charset="us-ascii"
+
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<meta name="Generator" content="Microsoft Word 15 (filtered medium)">
+<style><!--
+/* Font Definitions */
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Aptos;}
+/* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	font-size:12.0pt;
+	font-family:"Aptos",sans-serif;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;}
+span.EmailStyle18
+	{mso-style-type:personal-reply;
+	font-family:"Calibri",sans-serif;
+	color:windowtext;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	font-size:10.0pt;
+	mso-ligatures:none;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+--></style><!--[if gte mso 9]><xml>
+<o:shapedefaults v:ext="edit" spidmax="1026" />
+</xml><![endif]--><!--[if gte mso 9]><xml>
+<o:shapelayout v:ext="edit">
+<o:idmap v:ext="edit" data="1" />
+</o:shapelayout></xml><![endif]-->
+</head>
+<body lang="EN-US" link="blue" vlink="purple" style="word-wrap:break-word">
+<div class="WordSection1">
+<p class="MsoNormal"><span style="font-family:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<p class="MsoNormal"><span style="font-family:&quot;Calibri&quot;,sans-serif"><o:p>&nbsp;</o:p></span></p>
+<div>
+<div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in 0in 0in">
+<p class="MsoNormal"><b><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif">From:</span></b><span style="font-size:11.0pt;font-family:&quot;Calibri&quot;,sans-serif"> Kaiser, Daniel &lt;KAISER@Grinnell.EDU&gt;
+<br>
+<b>Sent:</b> Wednesday, October 16, 2024 8:02 AM<br>
+<b>To:</b> Jones, Christopher &lt;JONESCHR@grinnell.edu&gt;<br>
+<b>Subject:</b> a few more notes about the Yeager digitized interviews<o:p></o:p></span></p>
+</div>
+</div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">Hi, Chris. Now that I've gone thru all 19 interviews currently posted online, I noticed a few more items that need correction.&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">1. What's identified in the online table of interviews as the recording of Elayne Chapman Kaiser (<a href="https://yeager-collection.grinnell.edu/items/dg_1724956092.html">https://yeager-collection.grinnell.edu/items/dg_1724956092.html</a>)
+ pairs the transcript of Chapman Kaiser with the recorded interview of Elizabeth Beyene (whose own recording has the correct transcript matched with the interview). Not sure what happened to Chapman Kaiser's recording; I don't think I ran into it among the
+ other recordings.</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">2. A somewhat different issue arises in the interview with Jon Gray (<a href="https://yeager-collection.grinnell.edu/items/dg_1724957021.html">https://yeager-collection.grinnell.edu/items/dg_1724957021.html</a>);
+ it's the right transcript but the first 4+ minutes are missing from the transcript and within those four minutes is a lot of information about Gray's family, their education, etc. The recording is quite faint, especially in the beginning (I had to bump up
+ my sound a couple of times) so perhaps the automatic transcription could not pick it all up, &nbsp;but the missing text should be restored to the transcript.&nbsp;</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">3. A minor and, I hope, easily corrected error concerns what the table of interviews describes as an interview with &quot;Henrietta Stevens&quot; (<a href="https://yeager-collection.grinnell.edu/items/dg_1724966223.html">https://yeager-collection.grinnell.edu/items/dg_1724966223.html</a>).
+ As Ms. Stevens points out in the interview, her given name is actually &quot;Harrietta,&quot; not Henrietta.</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">Best,</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><span style="font-size:10.5pt">dan</span><o:p></o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+<div>
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CH2PR05MB71573BCC48E39D5C23C4BDE7BD4D2CH2PR05MB7157namp_--
